@@ -290,15 +290,25 @@ footer p1, footer p2 {
 
 /* Afficher le bouton hamburger sur les petits écrans */
 @media (max-width: 768px) {
-    .localisation p5{
-        text-align: center;
-        font-weight: bold;
-        font-size: 20px;
-        padding: 10px;
-    }
+    .reseaux{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;}
+    .localisation{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;}    
     form{
         margin: 0 auto;
-        width: 200px;
+        width: 180px;
         background-color: rgb(27, 54, 211);
         padding:100px;
         display: flex;
@@ -350,16 +360,32 @@ footer p1, footer p2 {
 }
 
 @media (max-width: 480px) {
+    .reseaux{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;}
+    .localisation{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;}    
     form{
-    margin: 0 auto;
-    width: 200px;
-    background-color: rgb(27, 54, 211);
-    padding:100px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 90px;
-    border: 5px solid rgb(0, 0, 0);
-}
+        margin: 0 auto;
+        width: 180px;
+        background-color: rgb(27, 54, 211);
+        padding:100px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 90px;
+        border: 5px solid rgb(0, 0, 0);
+    }
     header h1 {
         font-size: 20px;
     }
