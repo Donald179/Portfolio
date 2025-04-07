@@ -1,0 +1,254 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+}
+header{
+    background-color: rgb(11, 36, 175);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 4px 2px 5px rgba(0, 0, 0, 0.5);
+}
+header h1{
+    color: white;
+    font-size: 30px;
+    padding: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+header nav{
+    padding: 30px;
+    display: flex;
+}
+header nav ul{
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+header nav ul li{
+    font-size: 20px;
+    font-weight: bold;
+}
+header nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+header nav ul li a:hover{
+    color: rgb(0, 0, 0);
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    transform: scale(1.2);
+    transition: 0.5s;
+}
+
+main img{
+    border: 5px solid rgb(11, 36, 175);
+    margin: 20px;
+    box-shadow: 4px 2px 5px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px 8px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+}
+main img:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+main h2{
+    font-size: 40px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+main p{
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 10px;
+    text-align: center;
+}
+main .reseaux{
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Footer */
+footer {
+    background-color: rgb(11, 36, 175);
+    color: white;
+    display: flex;
+    flex-direction: column; /* Passe en colonne sur petits écrans */
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p1, footer p2 {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+/* Boutons */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    font-size: 16px;
+    color: white;
+    background-color: #2614ed;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Styles pour le menu hamburger */
+.menu-toggle {
+    display: none;
+    background-color: rgb(11, 36, 175);
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.menu.active {
+    right: 0; /* Fait apparaître le menu */
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.menu ul li {
+    margin: 15px 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu ul li a:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Afficher le bouton hamburger sur les petits écrans */
+@media (max-width: 768px) {
+    .menu {
+        position: fixed;
+        top: 0;
+        right: -350px; /* Cache le menu hors de l'écran */
+        width: 250px;
+        height: 100%;
+        background-color: rgb(11, 36, 175);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.3s ease; /* Animation pour le menu */
+        z-index: 999;
+    }
+    header {
+        flex-direction: column; /* Passe le header en colonne sur petits écrans */
+        align-items: center;
+    }
+
+    header nav ul {
+        flex-direction: column; /* Passe le menu en colonne */
+        gap: 10px;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+
+    .button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav.menu.active {
+        display: flex; /* Affiche le menu lorsqu'il est actif */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 20px;
+    }
+
+    header nav ul li {
+        font-size: 14px;
+    }
+
+    footer p1, footer p2 {
+        font-size: 12px;
+    }
+
+    .button {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
+@media (max-width: 1048px){
+    header{
+        flex-direction: column;
+        align-items: center;
+    }
+    header nav ul{
+        flex-direction: column;
+        gap: 10px;
+    }
+    header nav ul li{
+        font-size: 14px;
+    }
+    header nav ul li a{
+        font-size: 14px;
+    }
+
+}

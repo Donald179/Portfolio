@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio-contact</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script>
+        function envoyerMail(event) {
+            event.preventDefault(); // Empêche le rechargement de la page
+
+            const subject = document.getElementById("subject").value;
+            const message = document.getElementById("message").value;
+
+            // Destinataire
+            const destinataire = "lamienyerevabe@gmail.com";
+
+            // Corps de l'email
+            const body = encodeURIComponent(message);
+
+            // Redirection avec le sujet et le message
+            window.location.href = `mailto:${destinataire}?subject=${encodeURIComponent(subject)}&body=${body}`;
+        }
+    </script>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Karim BELEM</h1>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">ACCUEIL</a></li>
+                <li><a href="projets.html">PROJETS</a></li>
+                <li><a href="compétences.html">COMPETENCES</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="apropos.html">APROPOS</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+
+        <p>Pour toute demande de renseignements, veuillez remplir le formulaire ci-dessous :</p>
+        <form action="submit_form.php" method="post" onsubmit="envoyerMail(event)">
+            <h2>Formulaire de Contact</h2><br><br>
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name" placeholder="Votre nom" required>
+            <label for="surname">Prénom</label>
+            <input type="text" id="surname" name="surname" placeholder="Votre prénom" required>
+            <label for="subject">Sujet</label>
+            <input type="text" id="subject" name="subject" placeholder="Sujet de votre message" required>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Votre Message" required></textarea><br><br><br>
+
+            <button type="submit">Envoyer</button>
+        </form>
+        <br>
+        <div class="reseaux">
+            <p3><i class="fa-solid fa-phone"></i><a href="tel:+226 55-75-72-99">TELEPHONE</a></p3> <!-- Ajout de l'icône de téléphone --><pre>                  </pre>
+            <p4><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/22655757299">WHATSAPP</a></p4> <!-- Ajout de l'icône de téléphone -->
+        </div><br><br>
+        <div class="localisation">
+            <p5><i class="fa-solid fa-location-dot"></i>Burkina-Faso,Bobo-Dioulasso</p5> <!-- Ajout de l'icône de téléphone -->
+        </div>
+
+
+    </main>
+    <br><br>
+    
+    <br><br>
+
+    <footer>
+        <p1>Design by Karim BELEM</p1>
+        <p2>Tout Droits réservés 2025</p2>
+    </footer>
+    
+</body>
+</html>

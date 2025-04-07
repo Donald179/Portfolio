@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio-Noel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Karim BELEM</h1>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">ACCUEIL</a></li>
+                <li><a href="projets.html">PROJETS</a></li>
+                <li><a href="compétences.html">COMPETENCES</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="apropos.html">APROPOS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <img src="moi.jpeg" alt="Karim BELEM">
+        <br><br><br><br>
+        <h2>Karim BELEM</h2>
+        <br><br>
+        <p>Bienvenu sur mon Portfolio</p>
+        <p>Je vous invite à découvrire mes Compétences et mes Projets</p>
+        
+        <!-- Adding buttons -->
+        <div>
+            <a href="projets.html" class="button">Projets</a>
+            <a href="compétences.html" class="button">Compétences</a>
+        </div>
+    </main><br><br><br><br><br><br><br><br>
+
+    <footer>
+        <p1>Design by Karim BELEM</p1>
+        <p2>Tout Droits réservés 2025</p2>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

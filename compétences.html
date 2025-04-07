@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio-compétences</title>
+    <link rel="stylesheet" href="competences.css">
+</head>
+<body>
+
+    <header>
+        <h1>Karim BELEM</h1>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">ACCUEIL</a></li>
+                <li><a href="projets.html">PROJETS</a></li>
+                <li><a href="compétences.html">COMPETENCES</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="apropos.html">APROPOS</a></li>
+            </ul>
+        </nav>
+    </header><br><br><br>
+
+    <main>
+        <h2>Mes compétences</h2><br><br><br><br><br>
+        <div class="competences">
+            <section class="technical-skills">
+                <h3>Compétences Techniques</h3><br><br><br><br>
+                <div class="skills">
+                    <div class="skill">
+                        <p>HTML</p>
+                        <div class="progress-bar">
+                            <div class="progress html"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>CSS</p>
+                        <div class="progress-bar">
+                            <div class="progress css"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>JavaScript</p>
+                        <div class="progress-bar">
+                            <div class="progress javascript"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>PHP</p>
+                        <div class="progress-bar">
+                            <div class="progress php"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>MySQL</p>
+                        <div class="progress-bar">
+                            <div class="progress mysql"></div>
+                        </div>
+                    </div>
+                </div>
+            </section><pre>  </pre>
+            <section class="professionnal-skills">
+                <h3>Compétences Professionnels</h3><br><br><br><br>
+                <div class="skills">
+                    <div class="skill">
+                        <p>Gestion des projets</p>
+                        <div class="progress-bar">
+                            <div class="progress projet"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>Le travail en équipe</p>
+                        <div class="progress-bar">
+                            <div class="progress equipe"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>Un bon niveau de langue</p>
+                        <div class="progress-bar">
+                            <div class="progress langue"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>Un sens de l'organisation</p>
+                        <div class="progress-bar">
+                            <div class="progress organisation"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>La discipline</p>
+                        <div class="progress-bar">
+                            <div class="progress discipline"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div><br><br><br><br>
+    </main>
+
+    <footer>
+        <p1>Design by Karim BELEM</p1>
+        <p2>Tout Droits réservés 2025</p2>
+    </footer>
+    
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

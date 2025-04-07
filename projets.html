@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio-projets</title>
+    <link rel="stylesheet" href="projets.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script>
+        function envoyerMail(event) {
+            event.preventDefault(); // Empêche le rechargement de la page
+
+            const subject = document.getElementById("subject").value;
+            const message = document.getElementById("message").value;
+
+            // Destinataire
+            const destinataire = "lamienyerevabe@gmail.com";
+
+            // Corps de l'email
+            const body = encodeURIComponent(message);
+
+            // Redirection avec le sujet et le message
+            window.location.href = `mailto:${destinataire}?subject=${encodeURIComponent(subject)}&body=${body}`;
+        }
+    </script>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Karim BELEM</h1>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">ACCUEIL</a></li>
+                <li><a href="projets.html">PROJETS</a></li>
+                <li><a href="compétences.html">COMPETENCES</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="apropos.html">APROPOS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Mes Projets</h2>
+        <h1>Choisissez une opération</h1>
+        <select id="operation" onchange="afficherFormulaire()">
+            <option value="">-- Sélectionnez une opération --</option>
+            <option value="nombrePremierEtPair">1 - Dire si un nombre est premier et pair</option>
+            <option value="resteDivision">2 - Reste d'une division</option>
+            <option value="solutionEquation">3 - Résultat d'une équation</option>
+            <option value="formeTriangle">4 - Générer un triangle</option>
+        </select>
+
+        <div id="formulaire"></div>
+        <br><br>
+        <div id="resultat"></div>
+    </main>
+
+     <script>
+         function afficherFormulaire() {
+            const operation = document.getElementById("operation").value;
+            const formulaire = document.getElementById("formulaire");
+            formulaire.innerHTML = ""; // Réinitialiser le formulaire
+            document.getElementById("resultat").innerText = ""; // Réinitialiser le résultat
+
+            if (operation === "nombrePremierEtPair") {
+                formulaire.innerHTML = `
+                    <h2 class="operation-title">Vérifier si un nombre est premier et pair</h2>
+                    <input type="number" id="nombre" placeholder="Entrez un nombre"><br><br>
+                    <button onclick="verifierNombrePremierEtPair()">Vérifier</button>
+                `;
+            } else if (operation === "resteDivision") {
+                formulaire.innerHTML = `
+                    <h2 class="operation-title">Reste d'une division</h2>
+                    <input type="number" id="dividende" placeholder="Entrez le dividende"><br>
+                    <input type="number" id="diviseur" placeholder="Entrez le diviseur"><br><br>
+                    <button onclick="calculerReste()">Calculer</button>
+                `;
+            } else if (operation === "solutionEquation") {
+                formulaire.innerHTML = `
+                    <h2 class="operation-title">Solution d'une équation (ax + b = 0)</h2>
+                    <input type="number" id="a" placeholder="Entrez a"><br>
+                    <input type="number" id="b" placeholder="Entrez b"><br><br>
+                    <button onclick="resoudreEquation()">Résoudre</button>
+                `;
+            } else if (operation === "formeTriangle") {
+                formulaire.innerHTML = `
+                    <h2 class="operation-title">Génération d'un triangle</h2>
+                    <input type="number" id="hauteur" placeholder="Entrez la hauteur du triangle"><br><br><br>
+                    <button onclick="genererTriangle()">Générer</button>
+                `;
+            }
+         }
+
+         function verifierNombrePremierEtPair() {
+            const nombre = parseInt(document.getElementById("nombre").value);
+            if (isNaN(nombre) || nombre <= 1) {
+                alert("Veuillez entrer un nombre entier supérieur à 1.");
+                return;
+            }
+            let estPremier = true;
+            for (let i = 2; i <= Math.sqrt(nombre); i++) {
+                if (nombre % i === 0) {
+                    estPremier = false;
+                    break;
+                }
+            }
+            const estPair = nombre % 2 === 0;
+            document.getElementById("resultat").innerText = estPremier
+                ? `${nombre} est un nombre premier et ${estPair ? "pair" : "impair"}.`
+                : `${nombre} n'est pas un nombre premier mais il est ${estPair ? "pair" : "impair"}.`;
+         }
+
+         function calculerReste() {
+            const dividende = parseInt(document.getElementById("dividende").value);
+            const diviseur = parseInt(document.getElementById("diviseur").value);
+            if (isNaN(dividende) || isNaN(diviseur) || diviseur === 0) {
+                alert("Veuillez entrer des nombres valides (le diviseur ne peut pas être 0).");
+                return;
+            }
+            const reste = dividende % diviseur;
+            document.getElementById("resultat").innerText = `Le reste de la division est : ${reste}`;
+         }
+
+         function resoudreEquation() {
+            const a = parseFloat(document.getElementById("a").value);
+            const b = parseFloat(document.getElementById("b").value);
+            if (isNaN(a) || isNaN(b) || a === 0) {
+                alert("Veuillez entrer des valeurs valides (a ne peut pas être 0).");
+                return;
+            }
+            const solution = -b / a;
+            document.getElementById("resultat").innerText = `La solution de l'équation est : x = ${solution.toFixed(2)}`;
+         }
+
+         function genererTriangle() {
+            const hauteur = parseInt(document.getElementById("hauteur").value);
+            if (isNaN(hauteur) || hauteur <= 0) {
+                alert("Veuillez entrer une hauteur valide (un nombre positif).");
+                return;
+            }
+            let triangle = "";
+            for (let i = 1; i <= hauteur; i++) {
+                triangle += "*".repeat(i) + "\n";
+            }
+            document.getElementById("resultat").innerText = triangle;
+        }
+      </script>
+
+    <br><br><br><br><br><br>
+    <footer>
+        <p1>Design by Karim BELEM</p1>
+        <p2>Tout Droits réservés 2025</p2>
+    </footer>
+
+</body>
+</html>
